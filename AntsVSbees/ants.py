@@ -256,7 +256,9 @@ class ShortThrower(ThrowerAnt):
     name = 'Short'
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 4
-    implemented = False   # Change to True to view in the GUI
+    implemented = True    # Change to True to view in the GUI
+    food_cost = 2
+    min_range = 5
     # END Problem 4
 
 class LongThrower(ThrowerAnt):
@@ -265,7 +267,9 @@ class LongThrower(ThrowerAnt):
     name = 'Long'
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 4
-    implemented = False   # Change to True to view in the GUI
+    implemented = True    # Change to True to view in the GUI
+    food_cost = 2
+    max_range = 3
     # END Problem 4
 
 class FireAnt(Ant):
