@@ -279,7 +279,9 @@ class FireAnt(Ant):
     damage = 3
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 5
-    implemented = False   # Change to True to view in the GUI
+    implemented = True    # Change to True to view in the GUI
+    food_cost = 5
+    armor = 1
     # END Problem 5
 
     def reduce_armor(self, amount):
@@ -289,6 +291,10 @@ class FireAnt(Ant):
         """
         # BEGIN Problem 5
         "*** YOUR CODE HERE ***"
+        if self.armor <= amount:
+            for bee in self.place.bees[:]:      # iterate on list copy ...
+                bee.reduce_armor(self.damage) 
+        Insect.reduce_armor(self, amount)
         # END Problem 5
 
 class HungryAnt(Ant):
