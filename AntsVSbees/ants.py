@@ -339,6 +339,17 @@ class NinjaAnt(Ant):
 
 # BEGIN Problem 8
 # The WallAnt class
+class WallAnt(Ant):
+    """WallAnt does nothing each turn, but has a large armor value."""
+
+    name = 'Wall'
+    damage = 0
+    food_cost = 4
+    implemented = True
+
+    def __init__(self, armor=4):
+        Insect.__init__(self, armor)
+
 # END Problem 8
 
 class BodyguardAnt(Ant):
