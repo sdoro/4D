@@ -304,22 +304,39 @@ class HungryAnt(Ant):
     name = 'Hungry'
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 6
-    implemented = False   # Change to True to view in the GUI
+    implemented = True #la formica può essere utilizzata
+    food_cost = 4 #modifica del costo cibo
+    time_to_digest = 3 #tempo(turni) impiegato a digerire un'ape
+
+  # Change to True to view in the GUI
     # END Problem 6
 
     def __init__(self, armor=1):
         # BEGIN Problem 6
         "*** YOUR CODE HERE ***"
+        self.digesting = 0 #default a zero dal momento che la formica non ha mangiato niente
+        self.armor = armor #default armatura HungryAnt
+
+
         # END Problem 6
 
     def eat_bee(self, bee):
         # BEGIN Problem 6
         "*** YOUR CODE HERE ***"
+        bee.reduce_armor(bee.armor) #una volta mangiata l'ape, l'armatura di essa scende
+        self.digesting = self.time_to_digest #aumento dei turni da aspettare dato che la formica ha appena mangiato
         # END Problem 6
 
     def action(self, colony):
         # BEGIN Problem 6
         "*** YOUR CODE HERE ***"
+        if self.digesting != 0: #controllo se la fromica sta mangiando
+            self.digesting -= 1 #se sta mangiando le tolgo un turno
+        else:
+            bees = list(self.place.bees) #in caso contrario la faccio mangiare un'ape
+            if bees !=0:  #può mangiare l'ape solo se si trova nei dintroni
+                self.eat_bee(random.choice(bees) 
+                self.digesting = self.time_to_digest # mangiata l'ape si aumentano il numero di turni da aspettare (di default è 3)
         # END Problem 6
 
 class NinjaAnt(Ant):
