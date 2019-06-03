@@ -329,12 +329,15 @@ class NinjaAnt(Ant):
     damage = 1
     # OVERRIDE CLASS ATTRIBUTES HERE
     # BEGIN Problem 7
-    implemented = False   # Change to True to view in the GUI
+    blocks_path = False
+    food_cost = 5
+    implemented = True
     # END Problem 7
 
     def action(self, colony):
         # BEGIN Problem 7
-        "*** YOUR CODE HERE ***"
+        for bee in self.place.bees:
+            bee.reduce_armor(self.damage)
         # END Problem 7
 
 # BEGIN Problem 8
